@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bulb toggler</title>
+    <style>
+        body {
+            background: rgb(2, 0, 36);
+            background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgb(155, 223, 255) 0%, rgb(247, 155, 19) 100%);
+
+        }
+
+        .container {
+            flex-direction: column;
+            display: flex;
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(14, 14, 14);
+
+        }
+
+        .bulb-container {
+            margin: 10px auto;
+            background-color: #ffffff;
+            width: 500px;
+            height: 300px;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        .bulb-img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .btns {
+            margin-left: 10px;
+            width: 100px;
+            height: 50px;
+            border-radius: 20px;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .on-btn {
+            background-color: rgb(255, 115, 0);
+        }
+
+        .Off-btn {
+            background-color: rgb(54, 50, 50);
+           
+        }
+
+
+        .btns-container {
+            margin: 10px auto;
+        }
+
+        .active {
+            border: 1px solid black;
+            box-shadow: 0 0 10px 1px #030303;
+        }
+
+        @media screen and (max-width: 600px) {
+            .bulb-container {
+                width: 80%;
+                height: 80%;
+            }
+
+            .bulb-img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Bulb Toggler</h1>
+
+        <div class="bulb-container">
+            <img src="../lamp toggler/bulb-off.png" alt="bulb-off" id="bulb" height="300px" class="bulb-img">
+        </div>
+        <div class="btns-container">
+            <button class="btns on-btn " id="on-btn" onclick=" bulbOn()">On</button>
+            <button class="btns Off-btn " id="Off-btn" onclick="bulbOff()">Off</button>
+        </div>
+    </div>
+
+    <script>
+        function bulbOn() {
+            const status = document.getElementById("bulb");
+            status.src = "bulb-on.png"
+
+            const on = document.getElementById("on-btn")
+            on.classList.add("active")
+
+            const off = document.getElementById("Off-btn")
+            off.classList.remove("active")
+
+        }
+        function bulbOff() {
+            const status = document.getElementById("bulb");
+            status.src = "bulb-off.png"
+
+            const on = document.getElementById("on-btn")
+            on.classList.remove("active")
+
+            const off = document.getElementById("Off-btn")
+            off.classList.add("active")
+
+        }
+    </script>
+</body>
+
+</html>
